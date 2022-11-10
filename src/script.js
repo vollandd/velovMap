@@ -17,11 +17,6 @@ function fav_stock(station)
         }
     }
 
-function reset_fav()
-    {
-        localStorage.clear()
-    }
-
 var map = L.map('map').setView([45.784372, 4.735502], 13);
 
 L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -75,19 +70,10 @@ fetch('https://api.jcdecaux.com/vls/v1/stations?contract=lyon&apiKey=7cac7a43f50
         }
         
         var veloMark = L.marker([elem.position.lat, elem.position.lng], {icon: veloIcon}).addTo(map);
-        veloMark.bindPopup("<p>" + elem.name + "</p><p>velo dispo : " + elem.available_bikes + " / " + 
-        elem.bike_stands + "</p><p>" + elem.status + "</p><div class='alignItem'><button onclick='fav_stock(" + 
-        elem.number + ")' id='starBtn'>ajouter favori  <i class='fa fa-heart' style='font-size:12px;color:red'></i></button></div>", {className:'stylePopup'});
 
-        function see_fav(fav_number)
-        {
-            if (array.includes(elem.number)){
-
-                var veloMark = L.marker([elem.position.lat, elem.position.lng], {icon: veloIcon}).addTo(map);
-                veloMark.bindPopup("<p>" + elem.name + "</p><p>velo dispo : " + elem.available_bikes + " / " + 
-                elem.bike_stands + "</p><p>" + elem.status + "</p><div class='alignItem'><i class='fa fa-heart' style='font-size:12px;color:red'></i></div>", {className:'stylePopup'});
-            }
-        }
+        veloMark.bindPopup("<article><h2>" + elem.name + "</h2><h3>velo disponible : " + elem.available_bikes + " / " + elem.bike_stands +
+            "</h3><h3>station : " + elem.status + "</h3><button onclick='fav_stock(" + elem.number + 
+            ")' id='starBtn'>ajouter favori  <i class='fa fa-heart'></i></button></article>", {className:'stylePopup'});
     }    
 });
 
