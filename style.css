@@ -1,0 +1,19 @@
+#map { height: 700px; }
+
+p { text-align: center; }
+
+.stylePopup .leaflet-popup-content-wrapper,
+.stylePopup .leaflet-popup-tip {
+    background-color: black;
+    color: white;
+}
+
+.alignItem {
+    text-align: center;
+}
+
+#starBtn {
+    background-color: black;
+    color: white;
+    border-color: white;
+}
