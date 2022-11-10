@@ -47,7 +47,7 @@ fetch('https://api.jcdecaux.com/vls/v1/stations?contract=lyon&apiKey=7cac7a43f50
         if (elem.status == 'OPEN') {
 
             var veloIcon  = L.icon({
-                iconUrl: 'greenVelo.png',
+                iconUrl: 'images/greenVelo.png',
                 iconSize: [45, 45],
             });
         }
@@ -55,21 +55,21 @@ fetch('https://api.jcdecaux.com/vls/v1/stations?contract=lyon&apiKey=7cac7a43f50
         else {
 
             var veloIcon = L.icon({
-                iconUrl: 'redVelo.png',
+                iconUrl: 'images/redVelo.png',
                 iconSize: [45, 45],
             });
         }
 
         if (elem.available_bikes <= 3){
             var veloIcon = L.icon({
-                iconUrl: 'orangeVelo.png',
+                iconUrl: 'images/orangeVelo.png',
                 iconSize: [45, 45],
             });
         }
 
         if (elem.available_bikes == 0){
             var veloIcon = L.icon({
-                iconUrl: 'redVelo.png',
+                iconUrl: 'images/redVelo.png',
                 iconSize: [45, 45],
             });
         }
